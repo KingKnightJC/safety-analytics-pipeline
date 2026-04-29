@@ -1,0 +1,9 @@
+report_id,reporter_user_id,reported_user_id,reason,timestamp,status
+r001,user_003,user_002,hate_speech,2024-01-01 11:00:00,reviewed
+r002,user_005,user_004,harassment,2024-01-01 12:30:00,reviewed
+r003,user_007,user_002,hate_speech,2024-01-01 14:00:00,pending
+r004,user_008,user_004,harassment,2024-01-02 09:00:00,reviewed
+r005,user_009,user_002,explicit_content,2024-01-02 11:30:00,pending
+r006,user_010,user_004,hate_speech,2024-01-02 13:00:00,pending
+r007,user_001,user_006,spam,2024-01-02 14:00:00,dismissed
+r008,user_003,user_004,harassment,2024-01-02 15:00:00,pending

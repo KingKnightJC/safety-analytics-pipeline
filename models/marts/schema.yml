@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: fct_user_safety_signals
+    description: "One row per user aggregating all safety signals across events, reports and classifiers"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        data_tests:
+          - unique
+          - not_null
+      - name: total_events
+        description: "Total number of events the user generated"
+        data_tests:
+          - not_null
+      - name: total_flagged_events
+        description: "Number of events flagged as harmful"
+        data_tests:
+          - not_null
+      - name: max_classifier_score
+        description: "Highest classifier score recorded for this user"
+        data_tests:
+          - not_null
+
+  - name: dim_users
+    description: "User dimension with risk tier and risk score derived from safety signals"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        data_tests:
+          - unique
+          - not_null
+      - name: risk_tier
+        description: "Risk classification for the user"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['low', 'medium', 'high']
+      - name: risk_score
+        description: "Numeric risk score out of 100"
+        data_tests:
+          - not_null
+
+  - name: mart_abuse_patterns
+    description: "Daily summary of harmful content patterns across the platform"
+    columns:
+      - name: event_date
+        description: "Date of the events"
+        data_tests:
+          - not_null
+      - name: content_flag
+        description: "Type of harmful content"
+        data_tests:
+          - not_null
+      - name: total_events
+        description: "Total events on this date for this content type"
+        data_tests:
+          - not_null

@@ -1,0 +1,11 @@
+classifier_id,user_id,classifier_name,score,threshold,timestamp,flagged
+c001,user_002,hate_speech_detector,0.92,0.75,2024-01-01 10:30:00,true
+c002,user_004,harassment_detector,0.88,0.75,2024-01-01 11:30:00,true
+c003,user_001,hate_speech_detector,0.21,0.75,2024-01-01 12:00:00,false
+c004,user_002,explicit_content_detector,0.95,0.75,2024-01-01 13:00:00,true
+c005,user_005,harassment_detector,0.31,0.75,2024-01-01 14:00:00,false
+c006,user_006,hate_speech_detector,0.18,0.75,2024-01-01 15:00:00,false
+c007,user_004,hate_speech_detector,0.85,0.75,2024-01-02 10:00:00,true
+c008,user_002,harassment_detector,0.79,0.75,2024-01-02 11:00:00,true
+c009,user_007,explicit_content_detector,0.42,0.75,2024-01-02 12:00:00,false
+c010,user_004,explicit_content_detector,0.67,0.75,2024-01-02 13:00:00,false

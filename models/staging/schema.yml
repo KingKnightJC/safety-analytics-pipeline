@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "Cleaned and standardised user interaction events from the AI platform"
+    columns:
+      - name: event_id
+        description: "Unique identifier for each event"
+        data_tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "Identifier of the user who triggered the event"
+        data_tests:
+          - not_null
+      - name: content_flag
+        description: "Type of harmful content detected, or none"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['none', 'hate_speech', 'harassment', 'explicit_content']
+      - name: severity
+        description: "Severity level derived from content flag"
+        data_tests:
+          - accepted_values:
+              values: ['none', 'low', 'medium', 'high']
+      - name: is_flagged
+        description: "Boolean indicating whether the event was flagged as harmful"
+        data_tests:
+          - not_null
+
+  - name: stg_user_reports
+    description: "User submitted reports of harmful behaviour"
+    columns:
+      - name: report_id
+        description: "Unique identifier for each report"
+        data_tests:
+          - unique
+          - not_null
+      - name: reported_user_id
+        description: "The user being reported"
+        data_tests:
+          - not_null
+      - name: status
+        description: "Current status of the report"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['reviewed', 'pending', 'dismissed']
+
+  - name: stg_classifiers
+    description: "Automated ML classifier scores for user behaviour"
+    columns:
+      - name: classifier_id
+        description: "Unique identifier for each classifier run"
+        data_tests:
+          - unique
+          - not_null
+      - name: score
+        description: "Classifier confidence score between 0 and 1"
+        data_tests:
+          - not_null
+      - name: classifier_name
+        description: "Name of the classifier model used"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['hate_speech_detector', 'harassment_detector', 'explicit_content_detector']
