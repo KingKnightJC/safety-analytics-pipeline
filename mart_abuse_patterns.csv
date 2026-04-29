@@ -1,9 +1,0 @@
-event_date,content_flag,severity,total_events,unique_users,flagged_count
-2024-01-01,hate_speech,high,3,2,3
-2024-01-01,harassment,medium,2,1,2
-2024-01-01,explicit_content,high,1,1,1
-2024-01-01,none,none,9,8,0
-2024-01-02,hate_speech,high,2,2,2
-2024-01-02,harassment,medium,1,1,1
-2024-01-02,explicit_content,high,1,1,1
-2024-01-02,none,none,11,8,0

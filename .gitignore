@@ -1,4 +1,7 @@
-
+*.csv
+*.duckdb
+metabase.db*
+plugins/
 target/
-dbt_packages/
 logs/
+dbt_packages/
