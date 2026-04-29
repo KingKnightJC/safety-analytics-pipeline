@@ -28,8 +28,8 @@ Metabase Dashboard — self-service analytics for safety analysts
 
 ## Dashboard
 
-![Safety Analytics Dashboard](screenshots/'Metabase dashboard.png')
-![Lineage Graph](screenshots/'dbt Lineage Graph.png')
+![Safety Analytics Dashboard](screenshots/dashboard.png)
+![Lineage Graph](screenshots/lineage.png)
 
 ## Data Sources
 
